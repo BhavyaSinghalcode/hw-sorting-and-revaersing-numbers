@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <link href="ab.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <button onclick="ascending()">Ascending</button>
+    <button onclick="decending()">decending</button>
+    <p id="no"></p>
+    <p id="perno"></p>
+    <p id="ano"></p>
+    <p id="dno"></p>
+    <script>
+        function permarks(m){
+            return m*100/50;
+        }
+
+        var numbers=[2,50,3,25,50,30,10,1,44,39,15]
+        document.getElementById("no").innerHTML="The marks students scored out of 50 are  "+numbers
+        var permark=numbers.map(permarks)
+        document.getElementById("perno").innerHTML="Percentage they scored are   "+permark.join("%,   ")
+
+        function ascending(){
+            permark.sort(function(a,b){
+                return a-b
+            })
+            document.getElementById("ano").innerHTML=permark.join("%,    ")
+
+        }
+
+        function decending(){
+            permark.sort(function(a,b){
+                return b-a
+            })
+            document.getElementById("ano").innerHTML=permark.join("%    ")
+
+        }
+        </script>
+</body>
+</html>
